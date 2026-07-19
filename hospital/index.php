@@ -28,6 +28,7 @@ echo "<script>window.location.href ='index.php'</script>";
 </head>
 
     <body>
+    <div class="noise-overlay"></div>
 
     <!-- ################# Header Starts Here#######################--->
     

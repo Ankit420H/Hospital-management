@@ -529,3 +529,62 @@ header {
     box-shadow: 0 2px 3px 0 rgba(218, 218, 253, 0.35), 0 0px 3px 0 rgba(206, 206, 238, 0.35); }
 
 /*# sourceMappingURL=style.css.map */
+
+/* ===================================== Apple-Level Spatial UI ================================== */
+:root {
+  --apple-bg: #F5F5F7;
+  --apple-text: #1D1D1F;
+  --apple-glass-bg: rgba(255, 255, 255, 0.7);
+  --apple-glass-border: rgba(255, 255, 255, 0.5);
+}
+
+body {
+    background-color: var(--apple-bg) !important;
+    color: var(--apple-text) !important;
+    position: relative;
+}
+
+/* Noise Overlay */
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Bootstrap Overrides for Apple Aesthetic */
+.header-nav, .scroll-to-fixed-fixed {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.single-key, .blog-single-det {
+    background: var(--apple-glass-bg) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--apple-glass-border) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04) !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.single-key:hover, .blog-single-det:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
+}
+
+.btn-success, .btn-info {
+    background-color: #0071E3 !important;
+    border-color: #0071E3 !important;
+    border-radius: 999px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-success:hover, .btn-info:hover {
+    background-color: #005BB5 !important;
+    transform: scale(1.02);
+}
